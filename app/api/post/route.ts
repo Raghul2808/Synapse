@@ -3,23 +3,15 @@ import { prisma } from '../../../lib/prisma';
 import { auth } from '@/auth';
 import { NextResponse } from 'next/server';
 
-
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const session = await auth();
-    console.log("incoming",body,session);
-    // const validationResult = hackathonSchema.safeParse(body);
-    if(!session?.user.id){
-       return NextResponse.json({ error: "Please login to post a hackathon" }, { status: 400 });
+    console.log("incoming", body, session);
+
+    if (!session?.user?.id) {
+      return NextResponse.json({ error: "Please login to post a hackathon" }, { status: 400 });
     }
-    // if (!validationResult.success) {
-    //   const errorMessages = validationResult.error.errors.map(err => ({
-    //     field: err.path.join('.'),
-    //     message: err.message,
-    //   }));
-    //   return NextResponse.json({ errors: errorMessages }, { status: 400 });
-    // }
 
     const {
       teamName,
@@ -33,7 +25,6 @@ export async function POST(req: Request) {
       regDate,
       location,
       description,
-      userId,
     } = body;
 
     const hackathon = await prisma.hackathon.create({
@@ -44,12 +35,12 @@ export async function POST(req: Request) {
         hackathonMode,
         memberCount,
         skills,
-        role,
-        experience,
+        requiredRole: role ? role.toUpperCase() : undefined,             // Mapped to schema enum field
+        requiredExperience: experience ? experience.toUpperCase() : undefined, // Mapped to schema enum field
         regDate: new Date(regDate),
         location,
         description,
-        userId:session?.user?.id
+        userId: session.user.id,
       },
     });
 

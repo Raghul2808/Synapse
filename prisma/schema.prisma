@@ -9,27 +9,66 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+// ---------------------------------------------------------
+// CSP FINITE DOMAINS (Enums)
+// These ensure the AI matcher has exact values to compare
+// ---------------------------------------------------------
+
+enum ExperienceLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+}
+
+enum ProjectRole {
+  FRONTEND
+  BACKEND
+  FULLSTACK
+  UI_UX_DESIGNER
+  DATA_SCIENTIST
+  AI_ML_ENGINEER
+  APP_DEVELOPER
+  DEVOPS
+}
+
+enum ApplicationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+// ---------------------------------------------------------
+// MODELS
+// ---------------------------------------------------------
+
 model User {
-  id            String        @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
-  username      String?       @unique
-  email         String?       @unique
+  username      String?   @unique
+  email         String?   @unique
   emailVerified DateTime?
   image         String?
   password      String?
   bio           String?
-  role          String?
-  applications  Application[]
-  hackathons    Hackathon[]
-  accounts      Account[]
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  resumeUrl     String?
-  linkedinUrl   String?
-  githubUrl     String?
-  skills        String[]
 
+  // CSP Matchmaking Fields
+  primaryRole ProjectRole?
+  experience  ExperienceLevel?
+  skills      String[] // Kept as string array for soft-constraint matching (e.g., Next.js, Figma, Python, Supabase)
+  timezone    String? // Crucial soft constraint for global team collaboration
+
+  resumeUrl   String?
+  linkedinUrl String?
+  githubUrl   String?
+
+  applications      Application[]
+  hackathons        Hackathon[]
+  accounts          Account[]
   externalFavorites ExternalHackathonFavorite[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Account {
@@ -53,23 +92,27 @@ model Account {
 }
 
 model Hackathon {
-  id            String        @id @default(cuid())
+  id            String   @id @default(cuid())
   teamName      String
   hackathonName String
   regURL        String
   hackathonMode String
   memberCount   String
-  skills        String[]
-  role          String
-  experience    String
-  regDate       DateTime
   location      String
   description   String
-  userId        String
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  applications  Application[]
-  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  regDate       DateTime
+
+  // CSP Matchmaking Constraints
+  requiredRole       ProjectRole?
+  requiredExperience ExperienceLevel?
+  skills             String[] // Skills the team specifically needs (e.g., CNN-LSTM, Next.js)
+
+  userId       String
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  applications Application[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model ExternalHackathonFavorite {
@@ -111,12 +154,6 @@ model PasswordResetToken {
   expires DateTime
 
   @@unique([email, token])
-}
-
-enum ApplicationStatus {
-  PENDING
-  ACCEPTED
-  REJECTED
 }
 
 model VerificationToken {

@@ -1,0 +1,1 @@
+This folder contains 13 user-supplied genuine captures of the deployed Synapse interface. Browser automation remained unavailable in the report environment; no synthetic or substitute application screenshots were created. See screenshot_manifest.csv.

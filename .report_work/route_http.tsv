@@ -1,0 +1,20 @@
+/	200	https://synapse-livid-gamma-14.vercel.app/	Synapse
+/teams	200	https://synapse-livid-gamma-14.vercel.app/teams	Synapse
+/hackathons	200	https://synapse-livid-gamma-14.vercel.app/hackathons	Synapse
+/login	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/signup	200	https://synapse-livid-gamma-14.vercel.app/signup	Signup | Synapse
+/forgot-password	200	https://synapse-livid-gamma-14.vercel.app/forgot-password	Synapse
+/reset	200	https://synapse-livid-gamma-14.vercel.app/reset	Synapse
+/new-password	200	https://synapse-livid-gamma-14.vercel.app/new-password	Synapse
+/new-verification	200	https://synapse-livid-gamma-14.vercel.app/new-verification	Synapse
+/signup/onboarding	200	https://synapse-livid-gamma-14.vercel.app/signup/onboarding	Synapse
+/signup/verify	200	https://synapse-livid-gamma-14.vercel.app/signup/verify	Synapse
+/verify-email	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/error	200	https://synapse-livid-gamma-14.vercel.app/error	Synapse
+/dashboard	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/dashboard/profile	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/dashboard/requests	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/findmember	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/favorites	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/settings	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse
+/sentry-example-page	200	https://synapse-livid-gamma-14.vercel.app/login	Login | Synapse

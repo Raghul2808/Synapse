@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="black"/></marker></defs>
+<text x="640" y="42" text-anchor="middle" font-family="Times New Roman" font-size="25" font-weight="bold">Implemented Team Discovery and Filtering Flow</text>
+<rect x="45" y="275" width="180" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="135.0" y="315.0" text-anchor="middle" font-family="Times New Roman" font-size="20">GET /api/teams</text>
+<rect x="300" y="275" width="180" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="390.0" y="315.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Redux post store</text>
+<rect x="555" y="90" width="190" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="650.0" y="116.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Text search</text>
+<text x="650.0" y="144.0" text-anchor="middle" font-family="Times New Roman" font-size="20">team event location</text>
+<rect x="555" y="250" width="190" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="650.0" y="276.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Mode filter</text>
+<text x="650.0" y="304.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Online Offline Hybrid</text>
+<rect x="555" y="410" width="190" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="650.0" y="436.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Experience filter</text>
+<text x="650.0" y="464.0" text-anchor="middle" font-family="Times New Roman" font-size="20">client label match</text>
+<rect x="555" y="570" width="190" height="80" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="650.0" y="596.0" text-anchor="middle" font-family="Times New Roman" font-size="20">Skill overlap</text>
+<text x="650.0" y="624.0" text-anchor="middle" font-family="Times New Roman" font-size="20">substring match</text>
+<rect x="1000" y="275" width="190" height="90" rx="8" fill="white" stroke="black" stroke-width="2"/>
+<text x="1095.0" y="292.0" text-anchor="middle" font-family="Times New Roman" font-size="20">All predicates true</text>
+<text x="1095.0" y="320.0" text-anchor="middle" font-family="Times New Roman" font-size="20">render cards</text>
+<text x="1095.0" y="348.0" text-anchor="middle" font-family="Times New Roman" font-size="20">otherwise empty state</text>
+<line x1="225" y1="315.0" x2="300" y2="315.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="262.5" y="307.0" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">response</text>
+<line x1="480" y1="315.0" x2="555" y2="130.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="517.5" y="214.5" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">records</text>
+<line x1="480" y1="315.0" x2="555" y2="290.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="517.5" y="294.5" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">records</text>
+<line x1="480" y1="315.0" x2="555" y2="450.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="517.5" y="374.5" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">records</text>
+<line x1="390.0" y1="355" x2="650.0" y2="570" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="520.0" y="454.5" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">records</text>
+<line x1="745" y1="130.0" x2="1000" y2="320.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="872.5" y="217.0" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">AND</text>
+<line x1="745" y1="290.0" x2="1000" y2="320.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="872.5" y="297.0" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">AND</text>
+<line x1="745" y1="450.0" x2="1000" y2="320.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="872.5" y="377.0" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">AND</text>
+<line x1="745" y1="610.0" x2="1000" y2="320.0" stroke="black" stroke-width="2" marker-end="url(#a)"/>
+<text x="872.5" y="457.0" text-anchor="middle" font-family="Times New Roman" font-size="15" fill="black">AND</text>
+</svg>
